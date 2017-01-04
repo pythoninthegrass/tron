@@ -7,7 +7,7 @@ cd /d %~dp0
 
 :: JOB: Remove crapware programs, phase 1: by specific GUID
 REM Loop through the file...
-for /f %%i in (stage_2_de-bloat\oem\programs_to_target_by_GUID.txt) do (
+for /f %%i in (%~dp0\stage_2_de-bloat\oem\programs_to_target_by_GUID.txt) do (
 	REM  ...and for each line: a. check if it is a comment or SET command and b. perform the removal if not
 	if not %%i==:: (
 	if not %%i==set (
