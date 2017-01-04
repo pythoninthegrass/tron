@@ -1,0 +1,33 @@
+# PS cmdlet for uninstall strings via regedit
+Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*
+
+# Output
+SystemComponent : 1
+
+DisplayIcon     : C:\PROGRA~1\McAfee\MSC\\mscinres.dll
+UninstallString : C:\Program Files\McAfee\MSC\mcuihost.exe /body:misp://MSCJsRes.dll::uninstall.html /id:uninstall
+InstallLocation : C:\Program Files\McAfee
+Publisher       : McAfee, Inc.
+VersionMajor    : 15
+VersionMinor    : 0
+DisplayVersion  : 15.0.179
+DisplayName     : McAfee LiveSafe
+EstimatedSize   : 471909
+
+DisplayIcon     : C:\Program Files\McAfee\SiteAdvisor\Uninstall.exe
+DisplayName     : McAfee WebAdvisor
+DisplayVersion  : 4.0.164
+Publisher       : McAfee, Inc.
+UninstallString : C:\Program Files\McAfee\SiteAdvisor\Uninstall.exe
+InstallLocation : C:\Program Files\McAfee\SiteAdvisor
+URLInfoAbout    : http://www.siteadvisor.com
+VersionMajor    : 4
+VersionMinor    : 0
+
+#From Tron batch removal script
+#LiveSafe
+if exist "%ProgramFiles(x86)%\McAfee\MSC\mcuihost.exe" "%ProgramFiles(x86)%\McAfee\MSC\mcuihost.exe" /body:misp://MSCJsRes.dll::uninstall.html /id:uninstall
+if exist "%ProgramFiles%\McAfee\MSC\mcuihost.exe" "%ProgramFiles%\McAfee\MSC\mcuihost.exe" /body:misp://MSCJsRes.dll::uninstall.html /id:uninstall
+
+#WebAdvisor
+{35ED3F83-4BDC-4c44-8EC6-6A8301C7413A}
